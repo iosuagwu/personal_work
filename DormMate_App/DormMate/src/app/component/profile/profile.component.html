@@ -1,0 +1,35 @@
+<!doctype html>
+
+<body>
+  <div class="mx-auto">
+    <div class="card-group">
+      <div class="card" style="width: 10rem;"></div>
+      <div class="card" style="width: 50rem;">
+        <img src="https://villanova.com/images/2019/10/2/9_27_19_209.jpg?width=300" class="card-img-top" alt="My Facebook Photo">
+      </div>
+      <div class="card" style="width: 50rem;">
+        <div class="card-header">
+          <h4>{{usersList["firstName"]}} {{usersList["lastName"]}}</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Class: {{usersList["Class"]}}</li>
+            <li class="list-group-item">Hometown: {{usersList["Hometown"]}}</li>
+            <li class="list-group-item">Major: {{usersList["Major"]}}</li>
+            <li class="list-group-item">Smoke: {{usersList["Smoker"]}}</li>
+            <li class="list-group-item">Alcohol: {{usersList["Alcohol"]}}</li>
+            <li class="list-group-item">Neat: {{usersList["Neatness"]}}</li>
+            <li class="list-group-item">Bedtime: {{usersList["Bedtime"]}}</li>
+            <li class="list-group-item">Snore: {{usersList["Snore"]}}</li>
+            <li class="list-group-item">{{usersList["Bio"]}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="width: 10rem;">
+        <button routerLink="/editProfile" routerLinkActive="active" class="btn btn-primary">Edit Profile</button>
+        <button routerLink="/match" routerLinkActive="active" class="btn btn-primary">Back to Matching</button>
+        <button type="button" routerLink="/" (click)="signOut()" *ngIf="loggedIn===true" class="btn btn-primary">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</body>
