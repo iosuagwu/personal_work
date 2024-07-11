@@ -1,0 +1,136 @@
+<!doctype html>
+
+<body>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <form>
+          <div class="card" style="width: 18rem;">
+            <img src="https://www.w3schools.com/images/w3schools_green.jpg" class="card-img-top" alt="W3Schools.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+        </form>
+      </div>
+
+      <div class="col" >
+        <div class="card" style="width: 40rem;">
+          <div class="card-body">
+            <form [formGroup]="updateUser" (ngSubmit)="submitForm()" novalidate>
+              <input formControlName="firstName" class="card-header" name="firstName" type="text" placeholder="Enter First Name">
+              <input formControlName="lastName" class="card-header" name="lastName" type="text" placeholder="Enter Last Name">
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-4 pt-0">Gender</legend>
+                  <div class="col">
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input  formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="Option1" value="Male">
+                      <label class="form-check-label" for="snoreOption1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="Option2" value="Female">
+                      <label class="form-check-label" for="snoreOption2">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="Option3" value="Other">
+                      <label class="form-check-label" for="snoreOption3">Other</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group row">
+                <label for="exampleFormControlSelect1" class="col-sm-4">Class:</label>
+                <select formControlName="Class" class="form-control col-sm-7" id="exampleFormControlSelect1">
+                  <option>2020</option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                </select>
+              </div>
+              <div class="form-group row">
+                <label for="inputHometown" class="col-sm-4 col-form-label">Hometown:</label>
+                <input formControlName="Hometown" name="hometown" type="text" class="form-control col" id="inputHometown" placeholder="Enter Hometown">
+              </div>
+              <div class="form-group row">
+                <label for="inputMajor" class="col-sm-4 col-form-label">Major:</label>
+                <input formControlName="Major" name="major" type="text" class="form-control col" id="inputMajor" placeholder="Enter Major">
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-4 pt-0">Smoker?</legend>
+                  <div class="col">
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Smoker" class="form-check-input" type="radio" name="Smoker" id="smokeOption1" value="true">
+                      <label class="form-check-label" for="smokeOption1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Smoker" class="form-check-input" type="radio" name="Smoker" id="smokeOption2" value="false">
+                      <label class="form-check-label" for="smokeOption2">No</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-4 pt-0">Alcohol?</legend>
+                  <div class="col">
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Alcohol" class="form-check-input" type="radio" name="Alcohol" id="drinkOption1" value="true">
+                      <label class="form-check-label" for="drinkOption1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Alcohol" class="form-check-input" type="radio" name="Alcohol" id="drinkOption2" value="false">
+                      <label class="form-check-label" for="drinkOption2">No</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-4 pt-0">Neatness?</legend>
+                  <div class="col">
+                    <div class="form-check form-check-inline col-sm-3">
+                      <input formControlName="Neatness" class="form-check-input" type="radio" name="Neatness" id="neatOption1" value="true">
+                      <label class="form-check-label" for="neatOption1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-3">
+                      <input formControlName="Neatness" class="form-check-input" type="radio" name="Neatness" id="neatOption2" value="false">
+                      <label class="form-check-label" for="neatOption2">No</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group row">
+                <label for="inputBedtime" class="col-sm-4 col-form-label">Bedtime:</label>
+                <input formControlName="Bedtime" name="major" type="text" class="form-control col" id="inputBedtime" placeholder="Enter Average Bedtime">
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-4 pt-0">Snore?</legend>
+                  <div class="col">
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Snore" class="form-check-input" type="radio" name="Snore" id="snoreOption1" value="true">
+                      <label class="form-check-label" for="snoreOption1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4">
+                      <input formControlName="Snore" class="form-check-input" type="radio" name="Snore" id="snoreOption2" value="false">
+                      <label class="form-check-label" for="snoreOption2">No</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="bioInput">Write a Bio!</label>
+                <textarea formControlName="Bio" name="Bio" class="form-control" id="bioInput" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Confirm Edits!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
