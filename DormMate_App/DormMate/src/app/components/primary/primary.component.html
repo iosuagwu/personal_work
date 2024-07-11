@@ -1,0 +1,44 @@
+<!doctype html>
+<!--Style Sheet-->
+
+<!-- Login Boxes -->
+<div class="mx-auto" style= "width: 400px">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h1 style="text-align:center"><strong>DormMate</strong></h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #userRegForm='ngForm' (ngSubmit)="loginUser()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address:</label>
+          <input [(ngModel)]="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password:</label>
+          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Remember me!
+          </label>
+        </div>
+        <button  type="submit" class="btn btn-primary">Login</button>
+      </form>
+    	<nav>
+    		<a routerLink="/createAccount" routerLinkActive="active" class="btn btn-primary" id="createUser" >Create Account</a>
+    	</nav>
+      <button type="button" (click)="signInWithFB()" *ngIf="loggedIn===false" mat-flat-button color="primary">Sign In With Facebook</button>
+      <button type="button" (click)="signOut()" *ngIf="loggedIn===true" mat-flat-button color="primary">Sign Out From Facebook</button>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="example-card" *ngIf="loggedIn===true">
+    <mat-card-header>
+      <mat-card-title><h4>If this is your Facebook Profile, please continue:</h4></mat-card-title>
+      <mat-card-subtitle>Full Name: {{user.firstName}} {{user.lastName}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="user.photoUrl" alt="My Facebook Photo">
+    <a routerLink="/profile" routerLinkActive="active" class="btn btn-primary" id="createUser" >Continue</a>
+  </mat-card>
+</div>
