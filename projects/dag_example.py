@@ -1,3 +1,4 @@
+# To run dag it must be in the airflow/dags folder then run this code
 # import the libraries
 from datetime import timedelta
 # The DAG object; we'll need this to instantiate a DAG
